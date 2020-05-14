@@ -37,8 +37,15 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary submit-btn btn-block" [disabled]="registroForm.invalid">Crear cuenta</button>
+                            <button type="submit" class="btn btn-primary submit-btn btn-block" [disabled]="registroForm.invalid" *ngIf="!cargando">Crear cuenta</button>
                         </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary submit-btn btn-block" *ngIf="cargando" [disabled]="true">
+                                <i class="fa fa-spin fa-sync"></i>
+                                Espere...
+                            </button>
+                        </div>
+
                         <div class="text-block text-center my-3">
                             <span class="text-small font-weight-semibold">ya tienes una cuenta?</span>
                             <br>
